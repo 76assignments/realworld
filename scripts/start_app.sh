@@ -22,7 +22,7 @@ source "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv/bin/activate"
 
 # Run collectstatic command
 echo "Running collectstatic command..."
-python manage.py collectstatic --noinput
+# python manage.py collectstatic --noinput
 
 # Restart Gunicorn services
 echo "Restarting Gunicorn and Nginx services..."
