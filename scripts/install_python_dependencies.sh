@@ -14,14 +14,15 @@ sudo chown -R $current_user:$current_user "/home/$current_user/$PROJECT_MAIN_DIR
 
 # Create virtual environment
 echo "Creating virtual environment..."
-#python3 -m venv "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv"
+python3 -m venv "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv"
 
 # Activate virtual environment
 echo "Activating virtual environment..."
-#source "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv/bin/activate"
+source "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv/bin/activate"
 
 # Install dependencies
 echo "Installing Python dependencies..."
 pip install -r "/home/$current_user/$PROJECT_MAIN_DIR_NAME/requirements.txt"
 
+pip install mysqlclient
 echo "Dependencies installed successfully."
