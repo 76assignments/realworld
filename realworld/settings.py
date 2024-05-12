@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-f35(x7w#1hz7%oejc(t(x8ii7n^%n0pvzsp@x*qtfh8^$3^3j+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,9 +81,13 @@ WSGI_APPLICATION = "realworld.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'conduit',
+        'USER': 'admin',
+        'PASSWORD': 'Password123',
+        'HOST': 'conduit.cv6edy2oltka.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',       
     }
 }
 
