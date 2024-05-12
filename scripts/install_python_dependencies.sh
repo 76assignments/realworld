@@ -14,7 +14,7 @@ sudo chown -R $current_user:$current_user "/home/$current_user/$PROJECT_MAIN_DIR
 
 # Create virtual environment
 echo "Creating virtual environment..."
-virtualenv "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv"
+python3 -m venv "/home/$current_user/$PROJECT_MAIN_DIR_NAME/venv"
 
 # Activate virtual environment
 echo "Activating virtual environment..."
