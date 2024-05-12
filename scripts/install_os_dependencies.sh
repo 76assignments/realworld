@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
+sudo yum update -y  # Update package lists
 
-sudo apt update
 # Install Python3 pip
-sudo apt install -y python3-pip
+sudo yum install -y python3-pip
 
 # Install Virtualenv
-#sudo apt install -y virtualenv
+sudo pip3 install virtualenv
 
-#pip install --upgrade virtualenv
 
-sudo apt install -y libmysqlclient-dev
-sudo apt install -y pkg-config
+
+# Install pkg-config
+sudo yum install -y pkgconfig
+
+sudo yum groupinstall -y "Development Tools"
+
+
+sudo yum install  -y python3-devel
