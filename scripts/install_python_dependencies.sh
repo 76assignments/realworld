@@ -25,4 +25,5 @@ echo "Installing Python dependencies..."
 pip install -r "/home/$current_user/$PROJECT_MAIN_DIR_NAME/requirements.txt"
 
 pip install mysqlclient
+pip install gunicorn
 echo "Dependencies installed successfully."
