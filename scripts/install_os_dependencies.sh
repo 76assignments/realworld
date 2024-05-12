@@ -5,9 +5,9 @@ sudo apt update
 sudo apt install -y python3-pip
 
 # Install Virtualenv
-sudo apt install -y virtualenv
+#sudo apt install -y virtualenv
 
-pip install --upgrade virtualenv
+#pip install --upgrade virtualenv
 
 apt install libmysqlclient-dev
 apt install pkg-config
