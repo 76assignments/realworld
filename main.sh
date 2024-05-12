@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+sudo yum install -y git
 current_user=$(whoami)
 GIT_REPO_URL="https://github.com/76assignments/realworld.git"
 
