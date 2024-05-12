@@ -3,6 +3,7 @@
 
 PROJECT_MAIN_DIR_NAME="conduit"
 current_user=$(whoami)
+sed -i "s/ubuntu/$current_user/g" "/home/$current_user/$PROJECT_MAIN_DIR_NAME/gunicorn/gunicorn.service"
 # Copy gunicorn  service file
 sudo cp "/home/$current_user/$PROJECT_MAIN_DIR_NAME/gunicorn/gunicorn.service" "/etc/systemd/system/gunicorn.service"
 
