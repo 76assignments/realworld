@@ -7,7 +7,7 @@ sudo yum install -y git
 # Install Virtualenv
 sudo pip3 install virtualenv
 
-
+sudo yum install -y mariadb105-devel
 
 # Install pkg-config
 sudo yum install -y pkgconfig
