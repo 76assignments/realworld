@@ -9,11 +9,42 @@ from django.utils.html import format_html
 from django.views.decorators.http import require_http_methods
 from django_htmx.http import HttpResponseClientRedirect
 from realworld.articles.models import Article
+from django.contrib.auth.views import LoginView as BaseLoginView
+import json
+import requests
+import uuid
 
 from .forms import SettingsForm, UserCreationForm
 
 User = get_user_model()
 
+
+class CustomLoginView(BaseLoginView):
+    def form_valid(self, form):
+        event_id = str(uuid.uuid4())
+        event_data = {
+            "event_id": event_id,  
+            "username": form.cleaned_data["username"],
+        }
+
+        event_json = json.dumps(event_data)
+        lambda_url = "https://p2u53l7r11.execute-api.us-east-1.amazonaws.com/default/conduid-loginevent"
+
+        try:
+            response = requests.post(lambda_url, data=event_json)
+
+            if response.status_code == 200:
+                response_data = response.json()
+                message = response_data.get("message", "Success")
+                print(message)
+            else:
+                error_message = response.json().get("error", "Unknown error")
+                print(error_message)
+
+        except Exception as e:
+            error_message = str(e)
+            print(error_message)
+        return super().form_valid(form)
 
 @require_http_methods(["GET"])
 def profile(request: HttpRequest, user_id: int) -> HttpResponse:
