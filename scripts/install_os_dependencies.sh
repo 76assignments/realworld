@@ -9,5 +9,5 @@ sudo apt install -y python3-pip
 
 #pip install --upgrade virtualenv
 
-apt install libmysqlclient-dev
-apt install pkg-config
+sudo apt install -y libmysqlclient-dev
+sudo apt install -y pkg-config
